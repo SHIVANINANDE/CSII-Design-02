@@ -1,0 +1,38 @@
+<?php
+
+$name = $_POST['name'];
+$phone = $_POST['phone'];
+$company = $_POST['company'];
+$email = $_POST['email'];
+$city = $_POST['city'];
+$product = $_POST['products'];
+$details = $_POST['details'];
+
+$to = 'sales@csii.in';
+$from = $email;
+$subject = 'DEMO ENQUIRY';
+
+$message="
+
+<strong>Name      :</strong> $name<br/>
+<strong>phone       :</strong> $phone<br/>
+<strong>Compnay      :</strong> $company<br/>
+<strong>email       :</strong> $email<br/>
+<strong>city       :</strong> $city<br/>
+<strong>product       :</strong> $product<br/>
+<strong>details       :</strong> $details<br/>
+";
+
+$headers = "From: <$email>". "\r\n";
+$headers .= "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";		   
+$t1=mail($to, $subject, $message, $headers);
+if($t1)
+{
+echo "";
+echo '<script>
+alert("Submitted Successfully!! Our Sales team will contact you shortly");
+window.location="index.php";</script>';
+}
+
+?>

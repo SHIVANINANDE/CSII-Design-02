@@ -1,0 +1,161 @@
+
+<div class="modal fade modal-form" id="myModal" role="dialog">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Quick Enquiry</h4>
+        </div>
+        <div class="modal-body">
+        
+ <form action="mail.php" method="post" class="enquiry-form enquiry-form-modal">
+        
+        <div class="row">
+          <div class="form-group col-md-6 col-sm-12 col-xs-12">
+          <label>Name <span>*</span></label>
+          <input type="text" name="name" id="txtname" minlength="2" maxlength="40" onpaste="return false;" ondrop="return false;" autocomplete="off" class="form-control" runat="server" required />
+          </div>
+          
+          <div class="form-group col-md-6 col-sm-12 col-xs-12">
+          <label>Phone no <span>*</span></label>
+          <input type="text" id="txtphone" name="phone" minlength="2" maxlength="10" onpaste="return false;" ondrop="return false;" autocomplete="off" runat="server" class="form-control" required />
+          </div>
+          
+          <div class="form-group col-md-6 col-sm-12 col-xs-12">
+          <label>Your Company Name</label>
+          <input type="text" name="company" id="txtcompany" minlength="2" maxlength="40" onpaste="return false;" ondrop="return false;" autocomplete="off" runat="server" class="form-control" />
+          </div>
+          
+          <div class="form-group col-md-6 col-sm-12 col-xs-12">
+          <label>Email <span>*</span></label>
+          <input type="text" name="email" id="txtemail" minlength="2" maxlength="40" onpaste="return false;" ondrop="return false;" autocomplete="off" runat="server" class="form-control" required />
+          </div>
+          
+          <div class="form-group col-md-6 col-sm-12 col-xs-12">
+          <label>City</label>
+          <input type="text" name="city" id="txtcity" minlength="2" maxlength="40" onpaste="return false;" ondrop="return false;" autocomplete="off" runat="server" class="form-control"/>
+          </div>        
+          
+         
+          <div class="form-group col-md-6 col-sm-12 col-xs-12">
+          <label>Products <span>*</span></label>
+          <select class="form-control" id="ddlproduct" runat="server" name="products" required>        
+            <option value="ERP">ERP</option>
+            <option value="Finance">Finance</option>
+            <option value="HRMS">HRMS</option>
+            <option value="Lease">Lease</option>
+            <option value="E-Commerce Application">E-Commerce Application</option>
+            <option value="Purchase Inventory">Purchase Inventory</option>
+            <option value="Buildinf Permit">Building Permit</option>
+            <option value="File Mangement System">FMS</option>
+            <option value="mobile Application">Mobile Application</option>
+            <option value="Lease Mangement">Lease Management System</option>
+            <option value="Project Mangement System">Project Mangement System</option>
+            <option value="Payment Gateway">Payment Gateway</option>
+            <option value="Custom API">Custom API</option>
+            <option value="Others">Others</option>
+         </select>
+          </div>
+          <div class="form-group col-md-12 col-sm-12 col-xs-12">
+          <label>Enquiry Details</label>
+          <textarea type="text" id="txtenq" name="details" minlength="2" maxlength="60" onpaste="return false;" ondrop="return false;" autocomplete="off" runat="server" class="form-control select"></textarea>
+          </div>
+
+          <div class="form-group col-md-6 col-sm-12 col-xs-12">
+         <input type="submit" class="btn submit" name="submit" onclick="return ValidateContact();" value="submit" />            
+          </div>
+           
+          </div>
+</form>
+       
+          </div>
+      </div>
+    </div>
+</div>
+<noscript>
+<style type="text/css">
+form{display: none;}
+</style>
+</noscript>
+<script type="text/javascript">
+  function ValidateContact(){
+          var name = document.getElementById("txtname");
+          var phone = document.getElementById("txtphone");
+          var company = document.getElementById("txtcompany");
+          var email = document.getElementById("txtemail");
+          var city = document.getElementById("txtcity");
+          var products = document.getElementById("ddlproduct");
+          var budget = document.getElementById("budget");
+           var enquiry = document.getElementById("txtenq").value;
+
+            if (name.value == "") {
+                alert("Please enter your Name")
+                name.focus();
+                return false;
+            }
+                else if (phone.value == "") {
+                alert("Please enter your Phone No");
+                phone.focus();
+                return false;
+            }
+             else if (email.value == "") {
+                alert("Please enter your Email-ID");
+                email.focus();
+                return false;
+            }
+            else if (email.value != "" && IsValidEmail(email.value) == false) {
+                alert("Please enter a valid Email-ID");
+                email.focus();
+                return false;
+            }
+             else if(products.value=="0")
+    {
+        alert("Please select Products");
+        products.focus();
+        return false;
+    }
+             else if(budget.value=="0")
+    {
+        alert("Please select Budgets");
+        budget.focus();
+        return false;
+    }
+             else if (enquiry == "") {
+                alert("Please enter your Message");
+                enquiry.focus();
+                return false;
+            }
+             else if (new RegExp("([a-zA-Z0-9]+://)?([a-zA-Z0-9_]+:[a-zA-Z0-9_]+@)?([a-zA-Z0-9.-]+\\.[A-Za-z]{2,4})(:[0-9]+)?(/.*)?").test(enquiry) && enquiry!='') {
+                alert("Oops! Message field should not contain any URL.");
+                return false;
+            }
+
+  }
+   function IsValidEmail(strEmail) {
+            if (strEmail.length > 0) {
+                if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(strEmail)) {
+                    return (true);
+                }
+                return (false);
+            }
+        }
+</script>
+
+
+<script type="text/javascript">
+_linkedin_partner_id = "4497713";
+window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+</script><script type="text/javascript">
+(function(l) {
+if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+window.lintrk.q=[]}
+var s = document.getElementsByTagName("script")[0];
+var b = document.createElement("script");
+b.type = "text/javascript";b.async = true;
+b.src = "../snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b, s);})(window.lintrk);
+</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=4497713&amp;fmt=gif" />
+</noscript>

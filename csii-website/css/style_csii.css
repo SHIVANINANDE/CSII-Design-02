@@ -1,0 +1,544 @@
+@charset "utf-8";
+/* 
+    CSII Premium Redesign 
+    Theme: Modern Dark Glassmorphism
+    Description: A complete visual overhaul focusing on depth, gradients, and clarity.
+*/
+
+:root {
+  --bg-body: #0f111a;
+  --bg-surface: #1a1d2d;
+  --primary-gradient: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+  --secondary-gradient: linear-gradient(135deg, #F43F5E 0%, #F59E0B 100%);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --text-main: #F1F5F9;
+  --text-muted: #94A3B8;
+  --font-heading: "Comfortaa", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+  --transition-speed: 0.4s;
+}
+
+/* Global Reset & Typography */
+body {
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: var(--font-heading);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+a {
+  transition: all var(--transition-speed) ease;
+  text-decoration: none;
+}
+
+/* Utilities */
+.text-gradient {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.bg-glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+/* Navbar */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(15, 17, 26, 0.85);
+  /* Semi-transparent body bg */
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.navbar {
+  padding: 1rem 0;
+}
+
+.navbar-brand img {
+  height: 45px;
+  filter: brightness(0) invert(1);
+  /* Make logo white */
+}
+
+.nav-link {
+  color: var(--text-muted) !important;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 0.5rem 1rem !important;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.active {
+  color: #fff !important;
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+.dropdown-menu {
+  background: #1e293b;
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.dropdown-item {
+  color: var(--text-muted);
+  border-radius: 6px;
+  padding: 8px 16px;
+}
+
+.dropdown-item:hover {
+  background: var(--primary-gradient);
+  color: #fff;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 50px;
+  padding: 12px 30px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-primary-glow {
+  background: var(--primary-gradient);
+  color: #fff;
+  box-shadow: 0 10px 25px -10px rgba(59, 130, 246, 0.6);
+}
+
+.btn-primary-glow:hover {
+  box-shadow: 0 15px 35px -10px rgba(88, 28, 135, 0.8);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.btn-outline-glow {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.btn-outline-glow:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+/* Section Styling */
+section {
+  position: relative;
+  padding: 5rem 0;
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.15), transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.15), transparent 40%);
+  padding-top: 80px;
+  /* Offset for fixed header */
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  opacity: 0.8;
+}
+
+/* Cards (Services) */
+.service-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  height: 100%;
+  transition: var(--transition-speed);
+}
+
+.service-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-10px);
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--glass-border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: #8B5CF6;
+  /* Fallback */
+  transition: var(--transition-speed);
+}
+
+.service-card:hover .service-icon {
+  background: var(--primary-gradient);
+  color: #fff;
+}
+
+.service-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+/* Feature List (Why CSII) */
+.feature-item {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+}
+
+.feature-icon-box {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  background: var(--secondary-gradient);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.4);
+}
+
+/* Marquee / Trusted By */
+.trusted-by {
+  background: var(--surface);
+  /* consistent dark background */
+  padding: 3rem 0;
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+  overflow: hidden;
+  /* Ensure no scrollbars */
+}
+
+.marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-content {
+  display: flex;
+  gap: 4rem;
+  /* Spacing between logos */
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  max-height: 45px;
+  width: auto;
+  filter: grayscale(100%) opacity(0.5);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.logo img:hover {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.1);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+
+  /* Assumes content is duplicated. If not perfect loop, user can advise, but this fixes layout. */
+}
+
+/* Footer override */
+footer {
+  background: #05060a !important;
+  border-top: 1px solid var(--glass-border);
+  padding-top: 4rem;
+  color: #64748b;
+}
+
+footer h4,
+footer .f-heading {
+  color: #fff !important;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+footer a {
+  color: #94a3b8 !important;
+}
+
+footer a:hover {
+  color: #3B82F6 !important;
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-section {
+    text-align: center;
+  }
+}
+
+/* Custom Overrides for existing classes to mesh with new system */
+.bg-top,
+.bg-mountain,
+.gov-service-bg,
+.pvt_services {
+  background: none !important;
+  /* Remove old images */
+}
+
+/* Typography fix for existing HTML classes */
+.heading-1,
+.heading-2,
+.heading-3,
+.heading-color,
+.sub-heading-color {
+  font-family: var(--font-heading);
+  color: #fff !important;
+}
+
+.sub-heading-color {
+  color: var(--text-muted) !important;
+}
+
+/* Forms & Modals (Dark Mode) */
+.modal-content {
+  background: #1e293b;
+  border: 1px solid var(--glass-border);
+  color: var(--text-main);
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.modal-footer {
+  border-top: 1px solid var(--glass-border);
+}
+
+.btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.form-control,
+.form-select {
+  background-color: #0f111a;
+  border: 1px solid var(--glass-border);
+  color: #fff;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: #0f111a;
+  border-color: #3B82F6;
+  color: #fff;
+  box-shadow: 0 0 0 0.25rem rgba(59, 130, 246, 0.25);
+}
+
+.form-floating label {
+  color: var(--text-muted);
+}
+
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label,
+.form-select~label {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Footer Specific Overrides */
+.call-of-action {
+  background: linear-gradient(90deg, #1e293b 0%, #0f111a 100%) !important;
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+  margin: 5rem 0 !important;
+  border-radius: 20px;
+}
+
+/* ------------------------------------------------------------------
+   LEGACY COMPATIBILITY LAYER
+   Ensures older pages adapt to the new Dark Glassmorphism Theme
+------------------------------------------------------------------ */
+
+/* Override Material/Bootstrap light backgrounds */
+.white,
+.bg-white,
+.grey.lighten-5,
+.grey.lighten-4,
+.grey.lighten-3,
+.bg-light {
+  background: var(--glass-bg) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-glass);
+}
+
+/* Fix text colors in legacy containers */
+.white-text {
+  color: var(--text-main) !important;
+}
+
+.text-dark {
+  color: #fff !important;
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+/* Override legacy gradient backgrounds to fit dark theme */
+[class*="bg-gradientlight-"] {
+  background: var(--surface) !important;
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  box-shadow: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+[class*="bg-gradientlight-"]:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-glow);
+  border-color: var(--primary);
+}
+
+/* Fix Cards */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+}
+
+/* Fix Breadcrumbs */
+.breadcrumb-item a {
+  color: var(--primary-light);
+}
+
+.breadcrumb-item.active {
+  color: var(--text-muted);
+}
+
+/* Fix Legacy Headings */
+.heading-color,
+.sub-heading-color {
+  color: var(--text-main) !important;
+}
+
+/* Ensure links in legacy blocks are visible */
+.link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--primary-light);
+}
+
+/* Hide old heavy shadows or borders if ugly */
+.shadow-16dp {
+  box-shadow: var(--shadow-glass) !important;
+}
+
+/* Invert icons that might be black */
+.img-fluid[src*="icons/"] {
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+}
+
+/* Adjust legacy padding/margins if needed */
+.mt-85 {
+  margin-top: 100px;
+}
+
+/* Make sure the body background shines through */
+body>.bg-top {
+  background: transparent !important;
+}

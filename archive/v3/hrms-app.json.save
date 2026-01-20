@@ -1,0 +1,7 @@
+[
+    {"company": "Luxury/Sun-Info/Sun-Board", "baseUrl": "http://103.107.67.240/finance/rest/", "system":"LUXY","exclude":[],"features":[]},
+    {"company": "Aveesha", "baseUrl": "http://115.246.161.75/aveesha/rest/", "system":"AVEESHA","exclude":["LC","CV"],"features":[{"GEOFENCE":[{"AT":"In Office","latlong":"20.28588612692808, 85.81190506684172","limit":1},{"AT":"Onsite Visit","latlong":"21.976663143967446, 85.304699209218","limit":15}]}]},
+    {"company": "CSII-Staging", "baseUrl": "http://192.168.1.126:7089/finance/rest/", "system":"UHUD","exclude":[],"features":[]}
+    {"company": "Hindiko", "baseUrl": "http://cs/finance/rest/", "system":"UHUD","exclude":[],"features":[]}
+  
+]

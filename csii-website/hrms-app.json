@@ -1,0 +1,14 @@
+[
+  {
+    "company": "NHLML",
+    "baseUrl": "http://hrms.tubasmartoffice.in/hrms-new/api/",
+    "system": "NHML",
+    "license": {
+      "key": "TUBA2025NHML0001",
+      "validity": ""
+    },
+    "authCodes": [],
+    "exclude": [],
+    "features": [{"SECONDPUNCHTIME":0.01},{"GEOFENCE":"77.363866, 28.615142","limit":0.080}]
+  }
+]
